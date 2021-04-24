@@ -1,0 +1,51 @@
+ADD X1, X3, X4
+ADDI X1, XZR, #10
+AND X2, X1, X14
+ANDI X5, X1, #1
+B label_1
+label_1:
+SUBI X1, X1, #1
+CBZ X1, label_5
+CBNZ X1, label_1
+label_3:
+ORR X7, X11, X2
+ORRI X3, X9, #14
+B label_1
+label_5:
+SUBS X2, X2, XZR
+B.EQ, label_1
+B.NE, label_5
+B.HS, label_4
+B.LO, label_6
+B.MI, label_7
+B.PL, label_3
+B.VS, label_0
+B.VC, label_0
+B.HI, label_3
+B.LS, label_1
+B.GE, label_1
+B.LT, label_5
+B.GT, label_5
+B.LE, label_2
+label_4:
+EOR X4, X5, X6
+label_6:
+EORI X4, X5, #7
+label_7:
+BL 1
+label_8:
+SUB X6, X6, X7
+SUBI X7, X8, #2
+SUBIS X2, X3, #12
+BR LR
+label_0:
+LSL X2, X4, #3
+LSR X2, X2, #3
+STUR X2, SP, X0
+LDUR X2, SP, X0
+MUL X2, X3, X4
+label_2:
+PRNT X2
+PRNL
+DUMP
+HALT
